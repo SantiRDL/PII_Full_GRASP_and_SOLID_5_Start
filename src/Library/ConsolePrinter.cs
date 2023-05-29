@@ -5,7 +5,7 @@ namespace Full_GRASP_And_SOLID
 {
     public class ConsolePrinter : IPrinter
     {
-        private readonly IRecipeFormatter _recipeFormatter;
+        private IRecipeFormatter _recipeFormatter;
 
         public ConsolePrinter(IRecipeFormatter recipeFormatter)
         {
