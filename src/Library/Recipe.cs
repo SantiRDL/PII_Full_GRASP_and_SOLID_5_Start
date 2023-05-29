@@ -15,6 +15,11 @@ namespace Full_GRASP_And_SOLID
         private IList<BaseStep> steps = new List<BaseStep>();
 
         public Product FinalProduct { get; set; }
+        
+        public IList<BaseStep> Steps
+        {
+            get { return steps; }
+        }
 
         // Agregado por Creator
         public void AddStep(Product input, double quantity, Equipment equipment, int time)

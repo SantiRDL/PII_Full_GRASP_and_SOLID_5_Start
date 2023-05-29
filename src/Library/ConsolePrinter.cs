@@ -1,12 +1,21 @@
 using System;
 
+
 namespace Full_GRASP_And_SOLID
 {
     public class ConsolePrinter : IPrinter
     {
+        private readonly IRecipeFormatter _recipeFormatter;
+
+        public ConsolePrinter(IRecipeFormatter recipeFormatter)
+        {
+            _recipeFormatter = recipeFormatter;
+        }
+
         public void PrintRecipe(Recipe recipe)
         {
-            Console.WriteLine(recipe.GetTextToPrint());
+            string formattedRecipe = _recipeFormatter.Format(recipe);
+            Console.WriteLine(formattedRecipe);
         }
     }
 }
